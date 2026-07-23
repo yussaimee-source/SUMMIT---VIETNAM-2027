@@ -7,7 +7,7 @@
 <meta name="description" content="26–27 May 2027, Hanoi, Vietnam. Where Asia's banking leaders decide what must be built, governed and financed next.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,21 +34,16 @@
   </div>
 </header>
 
-<!-- ================= HERO — AI MOVEMENT OVER THE HANOI SKYLINE ================= -->
+<!-- ================= HERO — AI-POWERED VIETNAM FINANCIAL ECOSYSTEM ================= -->
 <section class="hero" id="hero">
   <div class="hero-media">
-    <!-- dusk sky -->
     <div class="sky"></div>
     <div class="sky-glow"></div>
-
-    <!-- data comet sweeping across the sky -->
     <div class="comet comet-1"></div>
     <div class="comet comet-2"></div>
-
-    <!-- rising data particles -->
     <div class="particles" id="particles"></div>
 
-    <!-- Hanoi skyline, drawn as original SVG silhouette: pagoda roofline, Turtle Tower motif, modern towers -->
+    <!-- Hanoi skyline, original SVG silhouette: pagoda roofline, Turtle Tower motif, modern towers -->
     <svg class="skyline" viewBox="0 0 1600 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
       <defs>
         <linearGradient id="bGrad" x1="0" y1="0" x2="0" y2="1">
@@ -60,141 +55,91 @@
           <rect x="6" y="8" width="2.4" height="2.4" fill="#E8B355" opacity=".4"/>
         </pattern>
       </defs>
-      <!-- far towers -->
       <g fill="url(#bGrad)" opacity=".55">
-        <rect x="10" y="230" width="46" height="230"/>
-        <rect x="70" y="190" width="34" height="270"/>
-        <rect x="150" y="250" width="60" height="210"/>
-        <rect x="1180" y="210" width="50" height="250"/>
-        <rect x="1260" y="260" width="40" height="200"/>
-        <rect x="1340" y="180" width="36" height="280"/>
-        <rect x="1420" y="240" width="70" height="220"/>
-        <rect x="1520" y="200" width="42" height="260"/>
+        <rect x="10" y="230" width="46" height="230"/><rect x="70" y="190" width="34" height="270"/>
+        <rect x="150" y="250" width="60" height="210"/><rect x="1180" y="210" width="50" height="250"/>
+        <rect x="1260" y="260" width="40" height="200"/><rect x="1340" y="180" width="36" height="280"/>
+        <rect x="1420" y="240" width="70" height="220"/><rect x="1520" y="200" width="42" height="260"/>
       </g>
-      <!-- mid towers with lit windows -->
       <g class="buildings">
-        <rect x="120" y="270" width="52" height="190"/>
-        <rect x="200" y="150" width="40" height="310"/>
-        <rect x="255" y="220" width="66" height="240"/>
-        <rect x="340" y="300" width="46" height="160"/>
-        <rect x="960" y="180" width="44" height="280"/>
-        <rect x="1020" y="240" width="58" height="220"/>
-        <rect x="1095" y="150" width="36" height="310"/>
-        <rect x="1150" y="270" width="50" height="190"/>
-        <rect x="1260" y="200" width="40" height="260"/>
-        <rect x="1320" y="255" width="60" height="205"/>
+        <rect x="120" y="270" width="52" height="190"/><rect x="200" y="150" width="40" height="310"/>
+        <rect x="255" y="220" width="66" height="240"/><rect x="340" y="300" width="46" height="160"/>
+        <rect x="960" y="180" width="44" height="280"/><rect x="1020" y="240" width="58" height="220"/>
+        <rect x="1095" y="150" width="36" height="310"/><rect x="1150" y="270" width="50" height="190"/>
+        <rect x="1260" y="200" width="40" height="260"/><rect x="1320" y="255" width="60" height="205"/>
       </g>
       <g class="buildings" fill="url(#windows)" style="mix-blend-mode:screen;">
-        <rect x="120" y="270" width="52" height="190"/>
-        <rect x="200" y="150" width="40" height="310"/>
-        <rect x="255" y="220" width="66" height="240"/>
-        <rect x="960" y="180" width="44" height="280"/>
-        <rect x="1020" y="240" width="58" height="220"/>
-        <rect x="1095" y="150" width="36" height="310"/>
-        <rect x="1260" y="200" width="40" height="260"/>
-        <rect x="1320" y="255" width="60" height="205"/>
+        <rect x="120" y="270" width="52" height="190"/><rect x="200" y="150" width="40" height="310"/>
+        <rect x="255" y="220" width="66" height="240"/><rect x="960" y="180" width="44" height="280"/>
+        <rect x="1020" y="240" width="58" height="220"/><rect x="1095" y="150" width="36" height="310"/>
+        <rect x="1260" y="200" width="40" height="260"/><rect x="1320" y="255" width="60" height="205"/>
       </g>
-      <!-- One Pillar Pagoda motif, centre-left -->
       <g class="landmark" transform="translate(430,300)">
-        <rect x="18" y="70" width="8" height="90"/>
-        <ellipse cx="22" cy="70" rx="42" ry="10"/>
+        <rect x="18" y="70" width="8" height="90"/><ellipse cx="22" cy="70" rx="42" ry="10"/>
         <path d="M -20 70 Q 22 20 64 70 Q 22 48 -20 70 Z"/>
       </g>
-      <!-- pitched dinh / temple roofline cluster -->
       <g class="landmark" transform="translate(560,330)">
-        <path d="M0 60 L40 10 L80 60 Z"/>
-        <rect x="10" y="60" width="60" height="60"/>
-        <path d="M60 60 L94 22 L128 60 Z"/>
-        <rect x="70" y="60" width="58" height="60"/>
+        <path d="M0 60 L40 10 L80 60 Z"/><rect x="10" y="60" width="60" height="60"/>
+        <path d="M60 60 L94 22 L128 60 Z"/><rect x="70" y="60" width="58" height="60"/>
       </g>
-      <!-- Turtle Tower on the water, centre-right -->
       <g class="landmark" transform="translate(760,330)">
-        <rect x="-10" y="140" width="120" height="6" opacity=".5"/>
-        <rect x="18" y="60" width="40" height="80"/>
-        <path d="M14 60 L38 30 L62 60 Z"/>
-        <rect x="26" y="30" width="24" height="30"/>
+        <rect x="-10" y="140" width="120" height="6" opacity=".5"/><rect x="18" y="60" width="40" height="80"/>
+        <path d="M14 60 L38 30 L62 60 Z"/><rect x="26" y="30" width="24" height="30"/>
         <path d="M23 30 L38 12 L53 30 Z"/>
       </g>
-      <!-- modern spires, right of centre -->
       <g class="buildings">
-        <rect x="820" y="240" width="30" height="220"/>
-        <rect x="860" y="160" width="26" height="300"/>
+        <rect x="820" y="240" width="30" height="220"/><rect x="860" y="160" width="26" height="300"/>
         <rect x="900" y="280" width="40" height="180"/>
       </g>
-      <!-- foreground silhouette band -->
       <rect x="0" y="440" width="1600" height="20" fill="#03060A"/>
     </svg>
 
-    <!-- glowing horizontal "data rail" speed lines crossing above the skyline -->
     <div class="rail-field">
-      <span class="rail rail-1"></span>
-      <span class="rail rail-2"></span>
-      <span class="rail rail-3"></span>
-      <span class="rail rail-4"></span>
+      <span class="rail rail-1"></span><span class="rail rail-2"></span>
+      <span class="rail rail-3"></span><span class="rail rail-4"></span>
     </div>
-
-    <!-- water reflection -->
     <div class="reflection"></div>
-
     <div class="hero-scrim"></div>
   </div>
 
+  <!-- Floating live data pills — the "speedy AI interaction" signature, mirrors a live dashboard skimming over the ecosystem -->
+  <div class="data-pills" aria-hidden="true">
+    <span class="pill glass pill-1"><i class="dot-live"></i> AI Credit Scoring · Live</span>
+    <span class="pill glass pill-2"><i class="dot-live"></i> SBV Digital Rail · Active</span>
+    <span class="pill glass pill-3">₫ 420T VND Processed / yr</span>
+    <span class="pill glass pill-4">Digital Đồng · CBDC Pilot Phase 2</span>
+  </div>
+
   <div class="hero-content">
-    <div class="hero-top">
-      <span class="chip glass"><i class="dot-live"></i> 28TH ANNUAL ASIAN BANKER SUMMIT</span>
-    </div>
-
-    <div class="hero-slides" id="heroSlides">
-      <article class="hero-slide is-active" data-slide="0">
-        <p class="eyebrow mono">AI · IN SPEED MODE</p>
-        <h1 class="hero-title">Banking at <span class="grad-text">Speed</span></h1>
-        <p class="hero-sub">Where Asia's banking leaders decide what must be built, governed and financed next.</p>
-      </article>
-      <article class="hero-slide" data-slide="1">
-        <p class="eyebrow mono">EXECUTION, NOT EXPERIMENTATION</p>
-        <h1 class="hero-title">AI in <span class="grad-text">Production</span></h1>
-        <p class="hero-sub">From pilots to enterprise-scale deployment — governance, infrastructure and accountability at real-world velocity.</p>
-      </article>
-      <article class="hero-slide" data-slide="2">
-        <p class="eyebrow mono">REAL-TIME MONEY MOVEMENT</p>
-        <h1 class="hero-title">Money at <span class="grad-text">Machine Speed</span></h1>
-        <p class="hero-sub">Payments, liquidity and settlement infrastructure rebuilt for an always-on financial system, over Hanoi's skyline.</p>
-      </article>
-    </div>
-
-    <div class="hero-meta mono">26–27 MAY 2027 &nbsp;·&nbsp; HANOI, VIETNAM</div>
+    <p class="hero-eyebrow mono">26–27 MAY 2027 · HANOI, VIETNAM</p>
+    <h1 class="hero-headline">Banking at Speed: <em>AI</em>, Rails and Trust for Vietnam's Next Financial Era</h1>
+    <p class="hero-sub">Asia's premier banking summit convenes the region's most influential financial minds in Hanoi — where artificial intelligence, real-time rails and regulatory trust converge to define tomorrow's economy.</p>
 
     <div class="hero-actions">
-      <a href="#register-your-interest" class="btn btn-solid btn-lg">Register Today</a>
-      <a href="#" class="btn btn-glass btn-lg glass">Download Brochure</a>
+      <a href="#register-your-interest" class="btn btn-solid btn-lg">Secure Your Place</a>
+      <a href="#agenda-section" class="btn btn-glass btn-lg glass">Explore the Agenda</a>
     </div>
 
-    <div class="hero-dots" id="heroDots">
-      <button class="hero-dot is-active" data-go="0" aria-label="Slide 1"></button>
-      <button class="hero-dot" data-go="1" aria-label="Slide 2"></button>
-      <button class="hero-dot" data-go="2" aria-label="Slide 3"></button>
+    <div class="countdown glass" id="countdown">
+      <div class="cd-block"><span class="mono" id="cdDays">000</span><label>Days</label></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="mono" id="cdHours">00</span><label>Hours</label></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="mono" id="cdMins">00</span><label>Minutes</label></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="mono" id="cdSecs">00</span><label>Seconds</label></div>
     </div>
+
+    <div class="scroll-cue mono">SCROLL <span></span></div>
   </div>
 
-  <!-- Signature element: live AI throughput HUD, reads like flight-radar over the city -->
-  <div class="speed-hud glass" aria-hidden="true">
-    <div class="speed-hud-top">
-      <span class="mono">AI THROUGHPUT · LIVE</span>
-      <span class="hud-dot"></span>
-    </div>
-    <div class="hud-value"><span class="mono" id="hudValue">0</span><span class="mono hud-unit">TPS</span></div>
-    <div class="hud-bar"><i id="hudBar"></i></div>
-    <div class="hud-cities mono">HANOI → SINGAPORE → HONG KONG</div>
+  <div class="hero-statbar glass-strip">
+    <div class="hs-item"><b>800+</b><span>Delegates</span></div>
+    <div class="hs-item"><b>90+</b><span>Speakers</span></div>
+    <div class="hs-item"><b>25+</b><span>Countries</span></div>
+    <div class="hs-item"><b>12</b><span>Breakout Sessions</span></div>
+    <div class="hs-item"><b>2 Days</b><span>Flagship Summit</span></div>
   </div>
-
-  <div class="hero-stats">
-    <div class="stat glass"><span class="stat-num" data-count="800">0</span><span class="stat-label">Delegates</span></div>
-    <div class="stat glass"><span class="stat-num" data-count="200">0</span><span class="stat-label">Organisations</span></div>
-    <div class="stat glass"><span class="stat-num" data-count="25">0</span><span class="stat-label">Countries</span></div>
-    <div class="stat glass"><span class="stat-num" data-count="90">0</span><span class="stat-label">Speakers</span></div>
-  </div>
-
-  <div class="scroll-cue mono">SCROLL <span></span></div>
 </section>
 
 <!-- ================= ABOUT ================= -->
@@ -764,39 +709,30 @@ window.addEventListener('scroll', () => {
   document.getElementById('backTop').classList.toggle('is-visible', window.scrollY > 800);
 });
 
-/* ---------- Hero slider ---------- */
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.hero-dot');
-let current = 0, slideTimer;
-
-function goTo(i) {
-  slides[current].classList.remove('is-active');
-  dots[current].classList.remove('is-active');
-  current = i;
-  slides[current].classList.add('is-active');
-  dots[current].classList.add('is-active');
+/* ---------- Countdown to 26 May 2027, Hanoi ---------- */
+const SUMMIT_DATE = new Date('2027-05-26T00:00:00+07:00').getTime();
+const cdDays = document.getElementById('cdDays');
+const cdHours = document.getElementById('cdHours');
+const cdMins = document.getElementById('cdMins');
+const cdSecs = document.getElementById('cdSecs');
+function pad(n) { return String(n).padStart(2, '0'); }
+function tickCountdown() {
+  const diff = Math.max(0, SUMMIT_DATE - Date.now());
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  cdDays.textContent = String(d).padStart(3, '0');
+  cdHours.textContent = pad(h);
+  cdMins.textContent = pad(m);
+  cdSecs.textContent = pad(s);
 }
-function next() { goTo((current + 1) % slides.length); }
-function startAutoplay() { slideTimer = setInterval(next, 6000); }
-function resetAutoplay() { clearInterval(slideTimer); startAutoplay(); }
-
-dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.go); resetAutoplay(); }));
-startAutoplay();
-
-/* ---------- AI throughput HUD ---------- */
-const hudValue = document.getElementById('hudValue');
-const hudBar = document.getElementById('hudBar');
-function pulseHud() {
-  const val = 320 + Math.round(Math.random() * 4680); // simulated TPS 320-5000
-  hudValue.textContent = val.toLocaleString();
-  hudBar.style.width = Math.min(100, (val / 5000) * 100) + '%';
-}
-pulseHud();
-setInterval(pulseHud, 1600);
+tickCountdown();
+setInterval(tickCountdown, 1000);
 
 /* ---------- Rising data particles over the skyline ---------- */
 const particleField = document.getElementById('particles');
-const particleCount = 26;
+const particleCount = 22;
 for (let i = 0; i < particleCount; i++) {
   const p = document.createElement('span');
   p.className = 'particle';
