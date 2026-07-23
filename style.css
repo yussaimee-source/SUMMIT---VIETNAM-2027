@@ -168,28 +168,107 @@ a{ color:inherit; text-decoration:none; }
   overflow:hidden;
   padding:140px 28px 60px;
 }
-.hero-media{ position:absolute; inset:0; z-index:0; }
-.hero-video{ width:100%; height:100%; object-fit:cover; filter:saturate(1.05) contrast(1.05); }
+.hero-media{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+
+/* Dusk sky over Hanoi */
+.sky{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg,
+      #050810 0%,
+      #0A1420 28%,
+      #0C2430 52%,
+      #103A38 72%,
+      #145048 100%);
+}
+.sky-glow{
+  position:absolute; left:50%; bottom:28%; width:1100px; height:520px; transform:translateX(-50%);
+  background:radial-gradient(ellipse at center, rgba(23,184,144,.35), rgba(111,231,221,.12) 45%, transparent 72%);
+  filter:blur(10px);
+  animation:glowpulse 7s ease-in-out infinite;
+}
+@keyframes glowpulse{ 0%,100%{ opacity:.7; } 50%{ opacity:1; } }
+
+/* Data comets sweeping across the sky */
+.comet{
+  position:absolute; width:2px; height:2px; border-radius:50%;
+  top:12%; left:-10%;
+  background:var(--fog);
+  box-shadow:
+    0 0 8px 2px rgba(255,255,255,.9),
+    -120px 6px 24px 2px rgba(111,231,221,.0);
+}
+.comet::before{
+  content:''; position:absolute; right:2px; top:50%; width:190px; height:1.5px;
+  background:linear-gradient(90deg, rgba(255,255,255,.9), rgba(111,231,221,.5) 40%, transparent);
+  transform:translateY(-50%);
+}
+.comet-1{ animation:comet-fly 9s linear infinite; animation-delay:1s; }
+.comet-2{ top:22%; animation:comet-fly 13s linear infinite; animation-delay:5.5s; }
+@keyframes comet-fly{
+  0%{ transform:translate(0,0); opacity:0; }
+  4%{ opacity:1; }
+  55%{ opacity:1; }
+  62%{ opacity:0; }
+  100%{ transform:translate(1500px, 90px); opacity:0; }
+}
+
+/* Rising AI data particles */
+.particles{ position:absolute; inset:0; pointer-events:none; }
+.particle{
+  position:absolute; bottom:26%; width:var(--size); height:var(--size); border-radius:50%;
+  opacity:0; filter:drop-shadow(0 0 4px currentColor);
+  animation:particle-rise var(--dur) ease-in var(--delay) infinite;
+}
+@keyframes particle-rise{
+  0%{ opacity:0; transform:translate(0,0); }
+  8%{ opacity:.9; }
+  85%{ opacity:.5; }
+  100%{ opacity:0; transform:translate(var(--drift), -420px); }
+}
+
+/* Skyline SVG */
+.skyline{
+  position:absolute; bottom:0; left:0; width:100%; height:56%;
+}
+.skyline .buildings rect{
+  fill:#040910;
+  stroke:rgba(111,231,221,.05);
+}
+.skyline .landmark{
+  fill:#040910;
+}
+.skyline .buildings rect{ filter:drop-shadow(0 0 0 transparent); }
+/* lit windows via layered pseudo pattern using multiple small rects appended by gradient mask */
+.skyline .buildings rect{
+  fill-opacity:1;
+}
+
+/* Horizontal AI "data-rail" speed lines above the skyline */
+.rail-field{ position:absolute; inset:0; pointer-events:none; }
+.rail{
+  position:absolute; left:-30%; width:34%; height:2px; border-radius:2px;
+  filter:blur(.3px);
+  opacity:.85;
+}
+.rail-1{ top:38%; background:linear-gradient(90deg, transparent, var(--jade), transparent); animation:rail-move 4.2s linear infinite; box-shadow:0 0 12px 1px rgba(23,184,144,.7); }
+.rail-2{ top:48%; background:linear-gradient(90deg, transparent, var(--cyan), transparent); animation:rail-move 6.4s linear infinite; animation-delay:1.2s; box-shadow:0 0 12px 1px rgba(111,231,221,.7); }
+.rail-3{ top:58%; background:linear-gradient(90deg, transparent, var(--gold), transparent); animation:rail-move 5.1s linear infinite; animation-delay:2.4s; box-shadow:0 0 12px 1px rgba(232,179,85,.6); }
+.rail-4{ top:44%; background:linear-gradient(90deg, transparent, #fff, transparent); animation:rail-move 8s linear infinite; animation-delay:.4s; opacity:.5; }
+@keyframes rail-move{ from{ transform:translateX(0); } to{ transform:translateX(430%); } }
+
+/* Water reflection strip */
+.reflection{
+  position:absolute; bottom:0; left:0; width:100%; height:14%;
+  background:linear-gradient(180deg, rgba(23,184,144,.12), transparent);
+  mask-image:linear-gradient(180deg, black, transparent);
+}
+
 .hero-scrim{
   position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(7,12,20,.55) 0%, rgba(7,12,20,.55) 35%, rgba(7,12,20,.92) 100%),
-    linear-gradient(90deg, rgba(7,12,20,.75) 0%, rgba(7,12,20,.25) 55%, rgba(7,12,20,.7) 100%);
-}
-.grid-overlay{
-  position:absolute; inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(circle at 30% 40%, black, transparent 75%);
-}
-.mesh{ position:absolute; border-radius:50%; filter:blur(90px); opacity:.55; mix-blend-mode:screen; }
-.mesh-a{ width:520px; height:520px; background:var(--jade); top:-120px; right:5%; animation:drift 22s ease-in-out infinite; }
-.mesh-b{ width:420px; height:420px; background:var(--cyan); bottom:-100px; left:8%; animation:drift 26s ease-in-out infinite reverse; }
-.mesh-c{ width:360px; height:360px; background:var(--gold); top:35%; left:45%; animation:drift 30s ease-in-out infinite; opacity:.28; }
-@keyframes drift{
-  0%,100%{ transform:translate(0,0) scale(1); }
-  33%{ transform:translate(40px,-30px) scale(1.08); }
-  66%{ transform:translate(-30px,25px) scale(.95); }
+    linear-gradient(180deg, rgba(5,8,16,.15) 0%, rgba(5,8,16,.35) 45%, rgba(5,8,16,.92) 100%),
+    linear-gradient(90deg, rgba(5,8,16,.65) 0%, rgba(5,8,16,.1) 55%, rgba(5,8,16,.55) 100%);
 }
 
 .hero-content{ position:relative; z-index:2; max-width:760px; }
@@ -218,25 +297,30 @@ a{ color:inherit; text-decoration:none; }
 }
 .hero-dot.is-active{ background:linear-gradient(90deg, var(--jade), var(--cyan)); width:52px; }
 
-/* AI Speed gauge — signature element */
-.speed-gauge{
-  position:absolute; right:6%; top:22%; z-index:2;
-  width:170px; padding:16px; text-align:center; display:none;
+/* AI Throughput HUD — signature element, reads like a flight-radar panel over the skyline */
+.speed-hud{
+  position:absolute; right:6%; top:20%; z-index:2;
+  width:220px; padding:18px 20px;
 }
-.gauge-svg{ width:100%; height:auto; }
-.gauge-track{ fill:none; stroke:rgba(255,255,255,.12); stroke-width:6; }
-.gauge-fill{
-  fill:none; stroke:url(#none); stroke:var(--jade); stroke-width:6; stroke-linecap:round;
-  stroke-dasharray:262; stroke-dashoffset:70;
-  transform:rotate(-210deg); transform-origin:70px 70px;
-  filter:drop-shadow(0 0 6px rgba(23,184,144,.7));
+.speed-hud-top{
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:.62rem; color:var(--cyan); letter-spacing:.12em; margin-bottom:12px;
 }
-.gauge-needle line{ stroke:var(--gold); stroke-width:3; stroke-linecap:round; filter:drop-shadow(0 0 4px rgba(232,179,85,.8)); }
-.gauge-needle circle{ fill:var(--gold); }
-.gauge-needle{ transition:transform 1.1s var(--ease); transform:rotate(-110deg); }
-.gauge-label{ display:flex; flex-direction:column; gap:2px; margin-top:6px; }
-.gauge-value{ font-size:1.5rem; color:var(--cyan); font-weight:600; }
-.gauge-unit{ font-size:.58rem; color:var(--mute); letter-spacing:.1em; }
+.hud-dot{
+  width:7px; height:7px; border-radius:50%; background:var(--jade);
+  box-shadow:0 0 0 0 rgba(23,184,144,.7); animation:pulse 1.6s infinite;
+}
+.hud-value{ display:flex; align-items:baseline; gap:6px; margin-bottom:12px; }
+.hud-value .mono:first-child{ font-size:1.8rem; color:var(--fog); font-weight:600; }
+.hud-unit{ font-size:.62rem; color:var(--mute); }
+.hud-bar{ height:4px; border-radius:4px; background:rgba(255,255,255,.1); overflow:hidden; margin-bottom:12px; }
+.hud-bar i{
+  display:block; height:100%; width:0%;
+  background:linear-gradient(90deg, var(--jade), var(--cyan));
+  transition:width 1.1s var(--ease);
+  box-shadow:0 0 8px rgba(111,231,221,.6);
+}
+.hud-cities{ font-size:.56rem; color:var(--mute); letter-spacing:.08em; }
 
 .hero-stats{
   position:relative; z-index:2;
@@ -455,7 +539,7 @@ fieldset legend{ font-size:.72rem; color:var(--cyan); margin-bottom:10px; }
    RESPONSIVE
    ========================================================= */
 @media (max-width:1080px){
-  .speed-gauge{ display:none; }
+  .speed-hud{ display:none; }
   .programme-grid, .track-grid, .theme-grid, .pillar-grid, .leave-grid{ grid-template-columns:repeat(2,1fr); }
   .deep-grid{ grid-template-columns:repeat(2,1fr); }
   .speaker-grid{ grid-template-columns:repeat(3,1fr); }
